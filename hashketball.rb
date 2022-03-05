@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -126,4 +128,31 @@ def game_hash
   }
 end
 
-# Write code here
+# def players
+#   players = []
+#   game_hash[:home][:players].map do |player| 
+#     players.push(player)
+#   end
+
+#   game_hash[:away][:players].map do |player| 
+#     players.push(player)
+#   end
+#   players
+# end
+
+
+
+def all_players
+home_players = game_hash[:home][:players]
+away_players = game_hash[:away][:players]
+
+all_players = home_players.concat away_players
+end
+
+def num_points_scored(str)
+  all_players.find do |player| 
+    if player[:player_name] == player
+      player[:points]
+    end
+  end
+end
